@@ -1,0 +1,94 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page | Nifty - Admin</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href="~/Content/js/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/js/nifty/css/nifty.css" rel="stylesheet" />
+    <link href="~/Content/js/nifty/css/nifty-demo-icons.min.css" rel="stylesheet" />
+    <link href="~/Content/js/nifty/css/nifty-demo.min.css" rel="stylesheet" />
+    <link href="~/Content/js/plugins/magic-check/css/magic-check.min.css" rel="stylesheet" />
+    <link href="~/Content/js/plugins/pace/pace.min.css" rel="stylesheet" />
+
+    <script src="~/Content/js/plugins/pace/pace.min.js"></script>
+    <script src="~/Content/js/jquery-2.1.4.min.js"></script>
+    @*<script src="~/Content/js/bootstrap-3.3.7/js/bootstrap.min.js"></script>*@
+    @*<script src="~/Content/js/nifty/js/nifty.min.js"></script>*@
+    <script src="~/Content/js/common.js"></script>
+</head>
+<body>
+    <div id="container" class="cls-container">
+        <div id="bg-overlay" class="bg-img"></div>
+
+        <script>
+            var obj = document.getElementById("bg-overlay");
+            var bg_img_name = common.getCookie("bg-img");
+
+            if (bg_img_name) {
+                var bg_img_url = "/Content/images/login/" + bg_img_name;
+                obj.style.backgroundImage = "url(" + bg_img_url + ")";
+            }
+            else {
+                obj.style.backgroundImage = "url(/Content/images/login/bg-img-1.jpg)";
+            }
+        </script>
+        <div class="cls-content">
+            <div class="cls-content-sm panel">
+                <div class="panel-body">
+                    <div class="mar-ver pad-btm">
+                        <h3 class="h4 mar-no">登 录</h3>
+                    </div>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <input type="text" id="UserName" name="UserName" class="form-control" placeholder="用户名" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="Password" name="Password" class="form-control" placeholder="密码">
+                        </div>
+                        <div class="checkbox pad-btm text-left">
+                            <input id="isremenber"  class="magic-checkbox" type="checkbox">
+                            <label for="demo-form-checkbox">记住密码</label>
+                        </div>
+                        <button id="submit" class="btn btn-primary btn-lg btn-block" type="submit">立即登录</button>
+                    </form>
+                </div>
+
+                @*<div class="pad-all">
+                        <a href="pages-password-reminder.html" class="btn-link mar-rgt">Forgot password ?</a>
+                        <a href="pages-register.html" class="btn-link mar-lft">Create a new account</a>
+
+                        <div class="media pad-top bord-top">
+                            <div class="pull-right">
+                                <a href="#" class="pad-rgt"><i class="demo-psi-facebook icon-lg text-primary"></i></a>
+                                <a href="#" class="pad-rgt"><i class="demo-psi-twitter icon-lg text-info"></i></a>
+                                <a href="#" class="pad-rgt"><i class="demo-psi-google-plus icon-lg text-danger"></i></a>
+                            </div>
+                            <div class="media-body text-left">
+                                Login with
+                            </div>
+                        </div>
+                    </div>*@
+            </div>
+        </div>
+        <div class="demo-bg">
+            <div id="demo-bg-list">
+                <div class="demo-loading"><i class="psi-repeat-2"></i></div>
+                <img class="demo-chg-bg" src="/Content/images/login/thumbs/bg-img-1.jpg" alt="Background Image">
+                <img class="demo-chg-bg" src="/Content/images/login/thumbs/bg-img-2.jpg" alt="Background Image">
+                <img class="demo-chg-bg" src="/Content/images/login/thumbs/bg-img-3.jpg" alt="Background Image">
+                <img class="demo-chg-bg" src="/Content/images/login/thumbs/bg-img-4.jpg" alt="Background Image">
+                <img class="demo-chg-bg" src="/Content/images/login/thumbs/bg-img-5.jpg" alt="Background Image">
+                <img class="demo-chg-bg" src="/Content/images/login/thumbs/bg-img-6.jpg" alt="Background Image">
+                <img class="demo-chg-bg" src="/Content/images/login/thumbs/bg-img-7.jpg" alt="Background Image">
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/js/pages/login/login.js"></script>
+</body>
+</html>

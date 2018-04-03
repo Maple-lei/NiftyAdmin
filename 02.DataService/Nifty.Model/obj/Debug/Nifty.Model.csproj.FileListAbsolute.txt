@@ -1,0 +1,9 @@
+F:\0.Maple\1.NiftyAdmin\SourceCode\02.DataService\Nifty.Model\bin\Debug\Nifty.Model.dll
+F:\0.Maple\1.NiftyAdmin\SourceCode\02.DataService\Nifty.Model\bin\Debug\Nifty.Model.pdb
+F:\0.Maple\1.NiftyAdmin\SourceCode\02.DataService\Nifty.Model\obj\Debug\Nifty.Model.csprojResolveAssemblyReference.cache
+F:\0.Maple\1.NiftyAdmin\SourceCode\02.DataService\Nifty.Model\obj\Debug\Nifty.Model.dll
+F:\0.Maple\1.NiftyAdmin\SourceCode\02.DataService\Nifty.Model\obj\Debug\Nifty.Model.pdb
+G:\NiftyAdmin\02.DataService\Nifty.Model\bin\Debug\Nifty.Model.dll
+G:\NiftyAdmin\02.DataService\Nifty.Model\bin\Debug\Nifty.Model.pdb
+G:\NiftyAdmin\02.DataService\Nifty.Model\obj\Debug\Nifty.Model.dll
+G:\NiftyAdmin\02.DataService\Nifty.Model\obj\Debug\Nifty.Model.pdb

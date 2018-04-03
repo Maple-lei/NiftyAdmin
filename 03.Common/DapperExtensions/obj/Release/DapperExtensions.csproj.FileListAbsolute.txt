@@ -1,0 +1,15 @@
+F:\1.WEMS\SourceCode\1.WEMS_Report_Common\DataAccess\DapperExtensions\bin\Release\DapperExtensions.dll
+F:\1.WEMS\SourceCode\1.WEMS_Report_Common\DataAccess\DapperExtensions\bin\Release\DapperExtensions.pdb
+F:\1.WEMS\SourceCode\1.WEMS_Report_Common\DataAccess\DapperExtensions\bin\Release\Dapper.dll
+F:\1.WEMS\SourceCode\1.WEMS_Report_Common\DataAccess\DapperExtensions\bin\Release\Oracle.ManagedDataAccess.dll
+F:\1.WEMS\SourceCode\1.WEMS_Report_Common\DataAccess\DapperExtensions\bin\Release\Dapper.xml
+F:\1.WEMS\SourceCode\1.WEMS_Report_Common\DataAccess\DapperExtensions\obj\Release\DapperExtensions.csprojResolveAssemblyReference.cache
+F:\1.WEMS\SourceCode\1.WEMS_Report_Common\DataAccess\DapperExtensions\obj\Release\DapperExtensions.dll
+F:\1.WEMS\SourceCode\1.WEMS_Report_Common\DataAccess\DapperExtensions\obj\Release\DapperExtensions.pdb
+F:\0.Maple\1.NiftyAdmin\NiftyAdmin\DapperExtensions\bin\Release\DapperExtensions.dll
+F:\0.Maple\1.NiftyAdmin\NiftyAdmin\DapperExtensions\bin\Release\DapperExtensions.pdb
+F:\0.Maple\1.NiftyAdmin\NiftyAdmin\DapperExtensions\bin\Release\Oracle.ManagedDataAccess.dll
+F:\0.Maple\1.NiftyAdmin\NiftyAdmin\DapperExtensions\bin\Release\Dapper.xml
+F:\0.Maple\1.NiftyAdmin\NiftyAdmin\DapperExtensions\obj\Release\DapperExtensions.csprojResolveAssemblyReference.cache
+F:\0.Maple\1.NiftyAdmin\NiftyAdmin\DapperExtensions\obj\Release\DapperExtensions.dll
+F:\0.Maple\1.NiftyAdmin\NiftyAdmin\DapperExtensions\obj\Release\DapperExtensions.pdb

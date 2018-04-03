@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>ClearScript</id>
+    <version>5.3.11.0</version>
+    <title>ClearScript Library</title>
+    <authors>Administrator</authors>
+    <owners>Administrator</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Description</description>
+    <summary />
+    <copyright>(c) Microsoft Corporation</copyright>
+  </metadata>
+</package>
