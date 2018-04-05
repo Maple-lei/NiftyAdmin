@@ -33,3 +33,4 @@ G:\NiftyAdmin\03.Common\DapperExtensions\bin\Debug\Oracle.ManagedDataAccess.dll
 G:\NiftyAdmin\03.Common\DapperExtensions\bin\Debug\Dapper.xml
 G:\NiftyAdmin\03.Common\DapperExtensions\obj\Debug\DapperExtensions.dll
 G:\NiftyAdmin\03.Common\DapperExtensions\obj\Debug\DapperExtensions.pdb
+G:\NiftyAdmin\03.Common\DapperExtensions\obj\Debug\DapperExtensions.csprojResolveAssemblyReference.cache
