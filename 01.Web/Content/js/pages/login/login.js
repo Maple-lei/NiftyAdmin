@@ -4,9 +4,12 @@
 
 var LoginController = {
     init: function () {
-        LoginController.initData();
-        LoginController.changeBackgroudImage();
-        LoginController.bindLoginEvent();
+        with (LoginController) {
+            initData();
+            changeBackgroudImage();
+            bindLoginEvent();
+            bindCheckEvent();
+        }
     },
 
     initData: function () {
@@ -18,12 +21,13 @@ var LoginController = {
         $("#UserName").val(password);
 
         if (isRemenber) {
-            //$("#isremenber").prop("checked", true);
+            $("#isremenber").addClass("check");
         }
     },
 
     bindLoginEvent: function () {
         $("#submit").click(function () {
+            var userName = $("#")
             $.ajax({
                 url: "/Account/ValidationLogin",
                 data: $("#login-form").serializeArray(),
@@ -88,5 +92,11 @@ var LoginController = {
 
             common.setCookie("bg-img", img_name);
         });
+    },
+
+    bindCheckEvent: function () {
+        $("#cb-remenber").click(function () {
+            $(this).toggleClass("check");
+        })
     }
 }
