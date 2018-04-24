@@ -1,1037 +1,1310 @@
-﻿@{
-    Layout = null;
-}
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>主页</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Admui框架,后台管理系统框架,后台框架,ui框架,后台bootstrap框架,响应式后台,后台主题" />
+    <meta name="description" content="Admui在线演示系统，Admui是一个基于Java及jQuery等最新Web技术的企业级通用管理系统快速开发框架，可以帮助企业极大的提高工作效率，节省开发成本，提升品牌形象" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+
+    <!-- 360浏览器默认使用Webkit内核 -->
     <meta name="renderer" content="webkit">
+    <!-- 禁止百度SiteAPP转码 -->
     <meta http-equiv="Cache-Control" content="no-siteapp">
-    <title>H+ 后台主题UI框架 - 主页</title>
-
-    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
-    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
-
-    <!--[if lt IE 8]>
-    <meta http-equiv="refresh" content="0;ie.html" />
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="http://cdn.admui.com/demo/pjax/1.3.0/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="http://cdn.admui.com/demo/pjax/1.3.0/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="http://cdn.admui.com/demo/pjax/1.3.0/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="http://cdn.admui.com/demo/pjax/1.3.0/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    <!-- 样式 -->
+    <link href="~/Content/js/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/site.css" rel="stylesheet" id="siteStyle" />
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie/'" />
     <![endif]-->
+    <!--[if lt IE 10]>
+    <script src="http://cdn.admui.com/demo/pjax/1.3.0/vendor/media-match/media.match.min.js"></script>
+    <script src="http://cdn.admui.com/demo/pjax/1.3.0/vendor/respond/respond.min.js"></script>
+    <![endif]-->
+    <!-- 图标 CSS-->
+    <link href="~/Content/css/font-awesome.css" rel="stylesheet" />
 
-    <link href="~/Scripts/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="~/Content/css/animate.min.css" rel="stylesheet" />
-    <link href="~/Content/css/style.min.css" rel="stylesheet" />
-    <link href="~/Scripts/layer/layer.css" rel="stylesheet" id="layui_layer_skinlayercss" />
-    <link href="~/Scripts/layer/layer.ext.css" rel="stylesheet" id="layui_layer_skinlayerextcss" />
-    <link href="~/Content/css/style.css" rel="stylesheet" id="layui_layer_skinmoonstylecss" />
+    @*<link rel="stylesheet" href="http://cdn.admui.com/demo/pjax/1.3.0/fonts/web-icons/web-icons.css">*@
+    <link href="~/Content/css/web-icons.css" rel="stylesheet" />
+    <!-- 插件 CSS -->
+    <link href="~/Content/js/toastr/toastr.css" rel="stylesheet" />
 
+    <!-- 插件 -->
+    <script src="~/Content/js/jquery-2.1.4.min.js"></script>
+
+    <script src="~/Content/js/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/breakpoints/breakpoints.min.js"></script>
+    <script src="~/Content/js/artTemplate/template.min.js"></script>
+    <script src="~/Content/js/toastr/toastr.min.js"></script>
+    <script src="~/Content/js/bootbox/bootbox.min.js"></script>
 </head>
-<body class="fixed-sidebar full-height-layout gray-bg  pace-done" style="overflow:hidden">
-    <div class="pace  pace-inactive">
-        <div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
-            <div class="pace-progress-inner"></div>
-        </div>
-        <div class="pace-activity"></div>
-    </div>
-    <div id="wrapper">
-        <!--左侧导航开始-->
-        <nav class="navbar-default navbar-static-side" role="navigation">
-            <div class="nav-close">
-                <i class="fa fa-times-circle"></i>
+
+<body class="site-contabs-open site-menubar-unfold ">
+
+    <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-inverse " role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided" data-toggle="menubar">
+                <span class="sr-only">切换菜单</span> <span class="hamburger-bar"></span>
+            </button>
+            <button type="button" class="navbar-toggle collapsed" data-target="#admui-navbarCollapse" data-toggle="collapse">
+                <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+            </button>
+            <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
+                <img class="navbar-brand-logo visible-lg visible-xs navbar-logo" src="http://cdn.admui.com/demo/pjax/1.3.0/images/logo-white.svg" title="Admui">
+                <img class="navbar-brand-logo hidden-xs hidden-lg navbar-logo-mini" src="http://cdn.admui.com/demo/pjax/1.3.0/images/logo-white-min.svg" title="Admui">
+                <div class="hidden-xs btn-group version-toggle">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle btn-sm btn-icon wb-chevron-down" id="versionToggle" data-toggle="dropdown" aria-expanded="false"></button>
+                    <ul class="dropdown-menu" aria-labelledby="versionToggle" role="menu">
+                        <li class="active" role="presentation">
+                            <a href="javascript:;" role="menuitem">切换到 pjax 版演示</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="http://iframe.demo.admui.com" role="menuitem">切换到 iframe 版演示</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="http://basic.demo.admui.com" role="menuitem">切换到 basic 版演示</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="slimScrollDiv" style="position: relative; width: auto; height: 100%;">
-                <div class="sidebar-collapse" style="width: auto; height: 100%;">
-                    <ul class="nav" id="side-menu">
-                        <li class="nav-header">
-                            <div class="dropdown profile-element">
-                                <span><img alt="image" class="img-circle" src="/Images/profile_small.jpg"></span>
-                                <a data-toggle="dropdown" class="dropdown-toggle" href="http://www.zi-han.net/theme/hplus/index.html#">
-                                    <span class="clear">
-                                        <span class="block m-t-xs"><strong class="font-bold">Beaut-zihan</strong></span>
-                                        <span class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
-                                    </span>
+        </div>
+        <div class="navbar-container container-fluid">
+            <div class="collapse navbar-collapse navbar-collapse-toolbar" id="admui-navbarCollapse">
+                <ul class="nav navbar-toolbar navbar-left">
+                    <li class="hidden-float">
+                        <a data-toggle="menubar" class="hidden-float" href="javascript:;" role="button" id="admui-toggleMenubar">
+                            <i class="icon hamburger hamburger-arrow-left">
+                                <span class="sr-only">切换目录</span>
+                                <span class="hamburger-bar"></span>
+                            </i>
+                        </a>
+                    </li>
+                    <li class="navbar-menu nav-tabs-horizontal nav-tabs-animate is-load" id="admui-navbar">
+                        <ul class="nav navbar-toolbar nav-tabs" role="tablist">
+                            <!-- 顶部菜单 -->
+
+                            <li role="presentation" class="active">
+                                <a data-toggle="tab" href="#admui-navTabsItem-1" aria-controls="admui-navTabsItem-1" role="tab" aria-expanded="false">
+                                    <i class="icon wb-library"></i> <span>UI 示例</span>
                                 </a>
-                                <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                    <li>
-                                        <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/form_avatar.html" data-index="0">修改头像</a>
+                            </li>
+
+                            <li role="presentation" class="">
+                                <a data-toggle="tab" href="#admui-navTabsItem-2" aria-controls="admui-navTabsItem-2" role="tab" aria-expanded="false">
+                                    <i class="icon wb-desktop"></i> <span>页面示例</span>
+                                </a>
+                            </li>
+
+                            <li role="presentation" class="">
+                                <a data-toggle="tab" href="#admui-navTabsItem-3" aria-controls="admui-navTabsItem-3" role="tab" aria-expanded="false">
+                                    <i class="icon wb-table"></i> <span>表格示例</span>
+                                </a>
+                            </li>
+
+                            <li role="presentation" class="">
+                                <a data-toggle="tab" href="#admui-navTabsItem-4" aria-controls="admui-navTabsItem-4" role="tab" aria-expanded="false">
+                                    <i class="icon wb-order"></i> <span>表单示例</span>
+                                </a>
+                            </li>
+
+                            <li role="presentation" class="">
+                                <a data-toggle="tab" href="#admui-navTabsItem-5" aria-controls="admui-navTabsItem-5" role="tab" aria-expanded="false">
+                                    <i class="icon wb-pie-chart"></i> <span>统计图表</span>
+                                </a>
+                            </li>
+
+                            <li role="presentation" class="">
+                                <a data-toggle="tab" href="#admui-navTabsItem-6" aria-controls="admui-navTabsItem-6" role="tab" aria-expanded="false">
+                                    <i class="icon fa fa-bars" ></i> <span>菜单示例</span>
+                                </a>
+                            </li>
+
+                            <li role="presentation" class="">
+                                <a data-toggle="tab" href="#admui-navTabsItem-7" aria-controls="admui-navTabsItem-7" role="tab" aria-expanded="false">
+                                    <i class="icon wb-settings"></i> <span>系统管理</span>
+                                </a>
+                            </li>
+
+                            <li class="dropdown" id="admui-navbarSubMenu">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" data-animation="slide-bottom" aria-expanded="true" role="button">
+                                    <i class="icon wb-more-vertical"></i>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="no-menu" role="presentation">
+                                        <a href="/sitemap" target="_blank" role="menuitem" data-pjax>
+                                            <i class="icon wb-list-numbered"></i><span>网站地图</span>
+                                        </a>
                                     </li>
-                                    <li>
-                                        <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/profile.html" data-index="1">个人资料</a>
-                                    </li>
-                                    <li>
-                                        <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/contacts.html" data-index="2">联系我们</a>
-                                    </li>
-                                    <li>
-                                        <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/mailbox.html" data-index="3">信箱</a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a href="http://www.zi-han.net/theme/hplus/login.html">安全退出</a>
+                                    <li class="no-menu" role="presentation">
+                                        <a href="/system/menu" target="_blank" role="menuitem" data-pjax>
+                                            <i class="icon wb-wrench"></i><span>菜单管理</span>
+                                        </a>
                                     </li>
                                 </ul>
-                            </div>
-                            <div class="logo-element">
-                                H+
-                            </div>
-                        </li>
-                        <li>
-                            <a href="http://www.zi-han.net/theme/hplus/index.html#">
-                                <i class="fa fa-home"></i>
-                                <span class="nav-label">主页</span>
-                                <span class="fa arrow"></span>
-                            </a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/index_v1.html" data-index="0">主页示例一</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/index_v2.html" data-index="5">主页示例二</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/index_v3.html" data-index="6">主页示例三</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/index_v4.html" data-index="7">主页示例四</a>
-                                </li>
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/index_v5.html" target="_blank">主页示例五</a>
-                                </li>
-                            </ul>
-
-                        </li>
-                        <li>
-                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/layouts.html" data-index="8"><i class="fa fa-columns"></i> <span class="nav-label">布局</span></a>
-                        </li>
-                        <li>
-                            <a href="http://www.zi-han.net/theme/hplus/index.html#">
-                                <i class="fa fa fa-bar-chart-o"></i>
-                                <span class="nav-label">统计图表</span>
-                                <span class="fa arrow"></span>
-                            </a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/graph_echarts.html" data-index="9">百度ECharts</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/graph_flot.html" data-index="10">Flot</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/graph_morris.html" data-index="11">Morris.js</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/graph_rickshaw.html" data-index="12">Rickshaw</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/graph_peity.html" data-index="13">Peity</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/graph_sparkline.html" data-index="14">Sparkline</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/graph_metrics.html" data-index="15">图表组合</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="http://www.zi-han.net/theme/hplus/mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">信箱 </span><span class="label label-warning pull-right">16</span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/mailbox.html" data-index="16">收件箱</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/mail_detail.html" data-index="17">查看邮件</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/mail_compose.html" data-index="18">写信</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="http://www.zi-han.net/theme/hplus/index.html#"><i class="fa fa-edit"></i> <span class="nav-label">表单</span><span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/form_basic.html" data-index="19">基本表单</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/form_validate.html" data-index="20">表单验证</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/form_advanced.html" data-index="21">高级插件</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/form_wizard.html" data-index="22">表单向导</a>
-                                </li>
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">文件上传 <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level collapse">
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/form_webuploader.html" data-index="23">百度WebUploader</a>
-                                        </li>
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/form_file_upload.html" data-index="24">DropzoneJS</a>
-                                        </li>
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/form_avatar.html" data-index="25">头像裁剪上传</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">编辑器 <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level collapse">
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/form_editors.html" data-index="26">富文本编辑器</a>
-                                        </li>
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/form_simditor.html" data-index="27">simditor</a>
-                                        </li>
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/form_markdown.html" data-index="28">MarkDown编辑器</a>
-                                        </li>
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/code_editor.html" data-index="29">代码编辑器</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/suggest.html" data-index="30">搜索自动补全</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/layerdate.html" data-index="31">日期选择器layerDate</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="http://www.zi-han.net/theme/hplus/index.html#"><i class="fa fa-desktop"></i> <span class="nav-label">页面</span><span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/contacts.html" data-index="32">联系人</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/profile.html" data-index="33">个人资料</a>
-                                </li>
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">项目管理 <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level collapse">
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/projects.html" data-index="34">项目</a>
-                                        </li>
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/project_detail.html" data-index="35">项目详情</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/teams_board.html" data-index="36">团队管理</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/social_feed.html" data-index="37">信息流</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/clients.html" data-index="38">客户管理</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/file_manager.html" data-index="39">文件管理器</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/calendar.html" data-index="40">日历</a>
-                                </li>
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">博客 <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level collapse">
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/blog.html" data-index="41">文章列表</a>
-                                        </li>
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/article.html" data-index="42">文章详情</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/faq.html" data-index="43">FAQ</a>
-                                </li>
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">时间轴 <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level collapse">
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/timeline.html" data-index="44">时间轴</a>
-                                        </li>
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/timeline_v2.html" data-index="45">时间轴v2</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/pin_board.html" data-index="46">标签墙</a>
-                                </li>
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">单据 <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level collapse">
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/invoice.html" data-index="47">单据</a>
-                                        </li>
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/invoice_print.html" data-index="48">单据打印</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/search_results.html" data-index="49">搜索结果</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/forum_main.html" data-index="50">论坛</a>
-                                </li>
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">即时通讯 <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level collapse">
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/chat_view.html" data-index="51">聊天窗口</a>
-                                        </li>
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/webim.html" data-index="52">layIM</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">登录注册相关 <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level collapse">
-                                        <li>
-                                            <a href="http://www.zi-han.net/theme/hplus/login.html" target="_blank">登录页面</a>
-                                        </li>
-                                        <li>
-                                            <a href="http://www.zi-han.net/theme/hplus/login_v2.html" target="_blank">登录页面v2</a>
-                                        </li>
-                                        <li>
-                                            <a href="http://www.zi-han.net/theme/hplus/register.html" target="_blank">注册页面</a>
-                                        </li>
-                                        <li>
-                                            <a href="http://www.zi-han.net/theme/hplus/lockscreen.html" target="_blank">登录超时</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/404.html" data-index="53">404页面</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/500.html" data-index="54">500页面</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/empty_page.html" data-index="55">空白页</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="http://www.zi-han.net/theme/hplus/index.html#"><i class="fa fa-flask"></i> <span class="nav-label">UI元素</span><span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/typography.html" data-index="56">排版</a>
-                                </li>
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">字体图标 <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level collapse">
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/fontawesome.html" data-index="57">Font Awesome</a>
-                                        </li>
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/glyphicons.html" data-index="58">Glyphicon</a>
-                                        </li>
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/iconfont.html" data-index="59">阿里巴巴矢量图标库</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">拖动排序 <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level collapse">
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/draggable_panels.html" data-index="60">拖动面板</a>
-                                        </li>
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/agile_board.html" data-index="61">任务清单</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/buttons.html" data-index="62">按钮</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/tabs_panels.html" data-index="63">选项卡 &amp; 面板</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/notifications.html" data-index="64">通知 &amp; 提示</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/badges_labels.html" data-index="65">徽章，标签，进度条</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/grid_options.html" data-index="66">栅格</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/plyr.html" data-index="67">视频、音频</a>
-                                </li>
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">弹框插件 <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level collapse">
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/layer.html" data-index="68">Web弹层组件layer</a>
-                                        </li>
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/modal_window.html" data-index="69">模态窗口</a>
-                                        </li>
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/sweetalert.html" data-index="70">SweetAlert</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">树形视图 <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level collapse">
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/jstree.html" data-index="71">jsTree</a>
-                                        </li>
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/tree_view.html" data-index="72">Bootstrap Tree View</a>
-                                        </li>
-                                        <li>
-                                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/nestable_list.html" data-index="73">nestable</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/toastr_notifications.html" data-index="74">Toastr通知</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/diff.html" data-index="75">文本对比</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/spinners.html" data-index="76">加载动画</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/widgets.html" data-index="77">小部件</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="http://www.zi-han.net/theme/hplus/index.html#"><i class="fa fa-table"></i> <span class="nav-label">表格</span><span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/table_basic.html" data-index="78">基本表格</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/table_data_tables.html" data-index="79">DataTables</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/table_jqgrid.html" data-index="80">jqGrid</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/table_foo_table.html" data-index="81">Foo Tables</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/table_bootstrap.html" data-index="82">
-                                        Bootstrap Table
-                                        <span class="label label-danger pull-right">推荐</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="http://www.zi-han.net/theme/hplus/index.html#"><i class="fa fa-picture-o"></i> <span class="nav-label">相册</span><span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/basic_gallery.html" data-index="83">基本图库</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/carousel.html" data-index="84">图片切换</a>
-                                </li>
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/blueimp.html" data-index="85">Blueimp相册</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/css_animation.html" data-index="86"><i class="fa fa-magic"></i> <span class="nav-label">CSS动画</span></a>
-                        </li>
-                        <li>
-                            <a href="http://www.zi-han.net/theme/hplus/index.html#"><i class="fa fa-cutlery"></i> <span class="nav-label">工具 </span><span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/form_builder.html" data-index="87">表单构建器</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                    </ul>
-                </div><div class="slimScrollBar" style="width: 4px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 955px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 4px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.9; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>
-            </div>
-        </nav>
-        <!--左侧导航结束-->
-        <!--右侧部分开始-->
-        <div id="page-wrapper" class="gray-bg dashbard-1">
-            <div class="row border-bottom">
-                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-                    <div class="navbar-header">
-                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="http://www.zi-han.net/theme/hplus/index.html#"><i class="fa fa-bars"></i> </a>
-                        <form role="search" class="navbar-form-custom" method="post" action="http://www.zi-han.net/theme/hplus/search_results.html">
-                            <div class="form-group">
-                                <input type="text" placeholder="请输入您需要查找的内容 …" class="form-control" name="top-search" id="top-search">
-                            </div>
-                        </form>
-                    </div>
-                    <ul class="nav navbar-top-links navbar-right">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="http://www.zi-han.net/theme/hplus/index.html#">
-                                <i class="fa fa-envelope"></i> <span class="label label-warning">16</span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-messages">
-                                <li class="m-t-xs">
-                                    <div class="dropdown-messages-box">
-                                        <a href="http://www.zi-han.net/theme/hplus/profile.html" class="pull-left">
-                                            <img alt="image" class="img-circle" src="./H+ 后台主题UI框架 - 主页_files/a7.jpg">
-                                        </a>
-                                        <div class="media-body">
-                                            <small class="pull-right">46小时前</small>
-                                            <strong>小四</strong> 这个在日本投降书上签字的军官，建国后一定是个不小的干部吧？
-                                            <br>
-                                            <small class="text-muted">3天前 2014.11.8</small>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <div class="dropdown-messages-box">
-                                        <a href="http://www.zi-han.net/theme/hplus/profile.html" class="pull-left">
-                                            <img alt="image" class="img-circle" src="./H+ 后台主题UI框架 - 主页_files/a4.jpg">
-                                        </a>
-                                        <div class="media-body ">
-                                            <small class="pull-right text-navy">25小时前</small>
-                                            <strong>国民岳父</strong> 如何看待“男子不满自己爱犬被称为狗，刺伤路人”？——这人比犬还凶
-                                            <br>
-                                            <small class="text-muted">昨天</small>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <div class="text-center link-block">
-                                        <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/mailbox.html" data-index="88">
-                                            <i class="fa fa-envelope"></i> <strong> 查看所有消息</strong>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="http://www.zi-han.net/theme/hplus/index.html#">
-                                <i class="fa fa-bell"></i> <span class="label label-primary">8</span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-alerts">
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/mailbox.html">
-                                        <div>
-                                            <i class="fa fa-envelope fa-fw"></i> 您有16条未读消息
-                                            <span class="pull-right text-muted small">4分钟前</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/profile.html">
-                                        <div>
-                                            <i class="fa fa-qq fa-fw"></i> 3条新回复
-                                            <span class="pull-right text-muted small">12分钟钱</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <div class="text-center link-block">
-                                        <a class="J_menuItem" href="http://www.zi-han.net/theme/hplus/notifications.html" data-index="89">
-                                            <strong>查看所有 </strong>
-                                            <i class="fa fa-angle-right"></i>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="hidden-xs">
-                            <a href="http://www.zi-han.net/theme/hplus/index_v1.html" class="J_menuItem" data-index="0"><i class="fa fa-cart-arrow-down"></i> 购买</a>
-                        </li>
-                        <li class="dropdown hidden-xs">
-                            <a class="right-sidebar-toggle" aria-expanded="false">
-                                <i class="fa fa-tasks"></i> 主题
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="row content-tabs">
-                <button class="roll-nav roll-left J_tabLeft">
-                    <i class="fa fa-backward"></i>
-                </button>
-                <nav class="page-tabs J_menuTabs">
-                    <div class="page-tabs-content">
-                        <a href="javascript:;" class="active J_menuTab" data-id="index_v1.html">首页</a>
-                    </div>
-                </nav>
-                <button class="roll-nav roll-right J_tabRight">
-                    <i class="fa fa-forward"></i>
-                </button>
-                <div class="btn-group roll-nav roll-right">
-                    <button class="dropdown J_tabClose" data-toggle="dropdown">
-                        关闭操作<span class="caret"></span>
-
-                    </button>
-                    <ul role="menu" class="dropdown-menu dropdown-menu-right">
-                        <li class="J_tabShowActive">
-                            <a>定位当前选项卡</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li class="J_tabCloseAll">
-                            <a>关闭全部选项卡</a>
-                        </li>
-                        <li class="J_tabCloseOther">
-                            <a>关闭其他选项卡</a>
-                        </li>
-                    </ul>
-                </div>
-                <a href="http://www.zi-han.net/theme/hplus/login.html" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
-            </div>
-            <div class="row J_mainContent" id="content-main">
-                <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="Home/index_v1" frameborder="0" data-id="index_v1.html" seamless=""></iframe>
-            </div>
-            <div class="footer">
-                <div class="pull-right">
-                    © 2014-2015 <a href="http://www.zi-han.net/" target="_blank">zihan's blog</a>
-                </div>
-            </div>
-        </div>
-        <!--右侧部分结束-->
-        <!--右侧边栏开始-->
-        <div id="right-sidebar">
-            <div class="slimScrollDiv" style="position: relative; width: auto; height: 100%;">
-                <div class="sidebar-container" style="width: auto; height: 100%;">
-
-                    <ul class="nav nav-tabs navs-3">
-
-                        <li class="active">
-                            <a data-toggle="tab" href="http://www.zi-han.net/theme/hplus/index.html#tab-1">
-                                <i class="fa fa-gear"></i> 主题
-                            </a>
-                        </li>
-                        <li class="">
-                            <a data-toggle="tab" href="http://www.zi-han.net/theme/hplus/index.html#tab-2">
-                                通知
-                            </a>
-                        </li>
-                        <li>
-                            <a data-toggle="tab" href="http://www.zi-han.net/theme/hplus/index.html#tab-3">
-                                项目进度
-                            </a>
-                        </li>
-                    </ul>
-
-                    <div class="tab-content">
-                        <div id="tab-1" class="tab-pane active">
-                            <div class="sidebar-title">
-                                <h3> <i class="fa fa-comments-o"></i> 主题设置</h3>
-                                <small><i class="fa fa-tim"></i> 你可以从这里选择和预览主题的布局和样式，这些设置会被保存在本地，下次打开的时候会直接应用这些设置。</small>
-                            </div>
-                            <div class="skin-setttings">
-                                <div class="title">主题设置</div>
-                                <div class="setings-item">
-                                    <span>收起左侧菜单</span>
-                                    <div class="switch">
-                                        <div class="onoffswitch">
-                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="collapsemenu">
-                                            <label class="onoffswitch-label" for="collapsemenu">
-                                                <span class="onoffswitch-inner"></span>
-                                                <span class="onoffswitch-switch"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="setings-item">
-                                    <span>固定顶部</span>
-
-                                    <div class="switch">
-                                        <div class="onoffswitch">
-                                            <input type="checkbox" name="fixednavbar" class="onoffswitch-checkbox" id="fixednavbar">
-                                            <label class="onoffswitch-label" for="fixednavbar">
-                                                <span class="onoffswitch-inner"></span>
-                                                <span class="onoffswitch-switch"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="setings-item">
-                                    <span>
-                                        固定宽度
-                                    </span>
-
-                                    <div class="switch">
-                                        <div class="onoffswitch">
-                                            <input type="checkbox" name="boxedlayout" class="onoffswitch-checkbox" id="boxedlayout">
-                                            <label class="onoffswitch-label" for="boxedlayout">
-                                                <span class="onoffswitch-inner"></span>
-                                                <span class="onoffswitch-switch"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="title">皮肤选择</div>
-                                <div class="setings-item default-skin nb">
-                                    <span class="skin-name ">
-                                        <a href="http://www.zi-han.net/theme/hplus/index.html#" class="s-skin-0">
-                                            默认皮肤
-                                        </a>
-                                    </span>
-                                </div>
-                                <div class="setings-item blue-skin nb">
-                                    <span class="skin-name ">
-                                        <a href="http://www.zi-han.net/theme/hplus/index.html#" class="s-skin-1">
-                                            蓝色主题
-                                        </a>
-                                    </span>
-                                </div>
-                                <div class="setings-item yellow-skin nb">
-                                    <span class="skin-name ">
-                                        <a href="http://www.zi-han.net/theme/hplus/index.html#" class="s-skin-3">
-                                            黄色/紫色主题
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="tab-2" class="tab-pane">
-
-                            <div class="sidebar-title">
-                                <h3> <i class="fa fa-comments-o"></i> 最新通知</h3>
-                                <small><i class="fa fa-tim"></i> 您当前有10条未读信息</small>
-                            </div>
-
-                            <div>
-
-                                <div class="sidebar-message">
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">
-                                        <div class="pull-left text-center">
-                                            <img alt="image" class="img-circle message-avatar" src="./H+ 后台主题UI框架 - 主页_files/a1.jpg">
-
-                                            <div class="m-t-xs">
-                                                <i class="fa fa-star text-warning"></i>
-                                                <i class="fa fa-star text-warning"></i>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+                    <li class="dropdown" id="admui-navbarMessage">
+                        <a data-toggle="dropdown" href="javascript:;" class="msg-btn" aria-expanded="false" data-animation="scale-up" role="button">
+                            <i class="icon wb-bell" aria-hidden="true"></i>
+                            <span class="badge badge-danger up msg-num"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right dropdown-menu-media" role="menu">
+                            <li class="dropdown-menu-header" role="presentation">
+                                <h5>最新消息</h5>
+                                <span class="label label-round label-danger"></span>
+                            </li>
+                            <li class="list-group" role="presentation">
+                                <div class="navbar-message-content" id="admui-messageContent" data-height="220px" data-plugin="slimScroll"></div>
+                                <script type="text/html" id="admui-messageTpl">
+                                    {{if msgList.length < 1}}
+                                    <p class="text-center height-200 vertical-align">
+                                        <small class="vertical-align-middle opacity-four">没有新消息</small>
+                                    </p>
+                                    {{else}}
+                                    {{each msgList}}
+                                    <a class="list-group-item" href="#" data-message-id="{{$value.messageId}}" data-title="{{$value.title}}" data-content="{{$value.content}}" role="menuitem">
+                                        <div class="media">
+                                            <div class="media-left padding-right-10">
+                                                <i class="icon {{$value.type | iconType}} white icon-circle" aria-hidden="true"></i>
+                                            </div>
+                                            <div class="media-body">
+                                                <h6 class="media-heading">{{$value.title}}</h6>
+                                                <time class="media-meta" datetime="{{$value.sendTime}}">
+                                                    {{$value.sendTime | timeMsg}}
+                                                </time>
                                             </div>
                                         </div>
-                                        <div class="media-body">
+                                    </a>{{/each}}
+                                    {{/if}}
+                                </script>
+                            </li>
+                            <li class="dropdown-menu-footer" role="presentation">
+                                <a href="/system/account/message" target="_blank" data-pjax>
+                                    <i class="icon fa fa-navicon" ></i> 所有消息
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="hidden-xs" id="admui-navbarDisplay" data-toggle="tooltip" data-placement="bottom" title="设置主题与布局等">
+                        <a class="icon wb-layout" href="/system/settings/display" target="_blank" data-pjax>
+                            <span class="sr-only">主题与布局</span>
+                        </a>
+                    </li>
+                    <li class="hidden-xs" id="admui-QRcode" data-toggle="tooltip" data-placement="bottom" title="在手机上预览本页">
+                        <a class="icon wb-mobile" href="#" data-toggle="modal" data-target="#admui-mobileView">
+                            <span class="sr-only">在手机上预览</span>
+                        </a>
+                    </li>
+                    <li class="hidden-xs" id="admui-demo-app" data-toggle="tooltip" data-placement="bottom" title="下载桌面版">
+                        <a class="icon wb-download dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false" role="button">
+                            <span class="sr-only">下载桌面版</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-success bullet dropdown-menu-right" aria-labelledby="demoApp" role="menu">
+                            <li role="presentation">
+                                <a href="http://dl.admui.com/app/win/admui-demo.zip" role="menuitem"><i class="icon fa fa-windows" ></i> Windows 版</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="http://dl.admui.com/app/mac/admui-demo.zip" role="menuitem"><i class="icon fa fa-apple"></i> MacOS 版</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="open-kf" id="admui-service" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="在线咨询">
+                        <a class="icon wb-user" href="#" role="button">
+                            <span class="sr-only">在线咨询</span>
+                        </a>
+                    </li>
+                    <li class="hidden-xs" id="admui-navbarFullscreen" data-toggle="tooltip" data-placement="bottom" title="全屏">
+                        <a class="icon icon-fullscreen" data-toggle="fullscreen" href="#" role="button">
+                            <span class="sr-only">全屏</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icon fa fa-sign-out" id="admui-signOut" data-ctx="" data-user="703" href="/system/logout" role="button">
+                            <span class="sr-only">退出</span>
+                        </a>
+                    </li>
 
-                                            据天津日报报道：瑞海公司董事长于学伟，副董事长董社轩等10人在13日上午已被控制。
-                                            <br>
-                                            <small class="text-muted">今天 4:21</small>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="sidebar-message">
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">
-                                        <div class="pull-left text-center">
-                                            <img alt="image" class="img-circle message-avatar" src="./H+ 后台主题UI框架 - 主页_files/a2.jpg">
-                                        </div>
-                                        <div class="media-body">
-                                            HCY48之音乐大魔王会员专属皮肤已上线，快来一键换装拥有他，宣告你对华晨宇的爱吧！
-                                            <br>
-                                            <small class="text-muted">昨天 2:45</small>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="sidebar-message">
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">
-                                        <div class="pull-left text-center">
-                                            <img alt="image" class="img-circle message-avatar" src="./H+ 后台主题UI框架 - 主页_files/a3.jpg">
-
-                                            <div class="m-t-xs">
-                                                <i class="fa fa-star text-warning"></i>
-                                                <i class="fa fa-star text-warning"></i>
-                                                <i class="fa fa-star text-warning"></i>
-                                            </div>
-                                        </div>
-                                        <div class="media-body">
-                                            写的好！与您分享
-                                            <br>
-                                            <small class="text-muted">昨天 1:10</small>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="sidebar-message">
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">
-                                        <div class="pull-left text-center">
-                                            <img alt="image" class="img-circle message-avatar" src="./H+ 后台主题UI框架 - 主页_files/a4.jpg">
-                                        </div>
-
-                                        <div class="media-body">
-                                            国外极限小子的炼成！这还是亲生的吗！！
-                                            <br>
-                                            <small class="text-muted">昨天 8:37</small>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="sidebar-message">
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">
-                                        <div class="pull-left text-center">
-                                            <img alt="image" class="img-circle message-avatar" src="./H+ 后台主题UI框架 - 主页_files/a8.jpg">
-                                        </div>
-                                        <div class="media-body">
-
-                                            一只流浪狗被收留后，为了减轻主人的负担，坚持自己觅食，甚至......有些东西，可能她比我们更懂。
-                                            <br>
-                                            <small class="text-muted">今天 4:21</small>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="sidebar-message">
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">
-                                        <div class="pull-left text-center">
-                                            <img alt="image" class="img-circle message-avatar" src="./H+ 后台主题UI框架 - 主页_files/a7.jpg">
-                                        </div>
-                                        <div class="media-body">
-                                            这哥们的新视频又来了，创意杠杠滴，帅炸了！
-                                            <br>
-                                            <small class="text-muted">昨天 2:45</small>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="sidebar-message">
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">
-                                        <div class="pull-left text-center">
-                                            <img alt="image" class="img-circle message-avatar" src="./H+ 后台主题UI框架 - 主页_files/a3.jpg">
-
-                                            <div class="m-t-xs">
-                                                <i class="fa fa-star text-warning"></i>
-                                                <i class="fa fa-star text-warning"></i>
-                                                <i class="fa fa-star text-warning"></i>
-                                            </div>
-                                        </div>
-                                        <div class="media-body">
-                                            最近在补追此剧，特别喜欢这段表白。
-                                            <br>
-                                            <small class="text-muted">昨天 1:10</small>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="sidebar-message">
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">
-                                        <div class="pull-left text-center">
-                                            <img alt="image" class="img-circle message-avatar" src="./H+ 后台主题UI框架 - 主页_files/a4.jpg">
-                                        </div>
-                                        <div class="media-body">
-                                            我发起了一个投票 【你认为下午大盘会翻红吗？】
-                                            <br>
-                                            <small class="text-muted">星期一 8:37</small>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div id="tab-3" class="tab-pane">
-
-                            <div class="sidebar-title">
-                                <h3> <i class="fa fa-cube"></i> 最新任务</h3>
-                                <small><i class="fa fa-tim"></i> 您当前有14个任务，10个已完成</small>
-                            </div>
-
-                            <ul class="sidebar-list">
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">
-                                        <div class="small pull-right m-t-xs">9小时以后</div>
-                                        <h4>市场调研</h4> 按要求接收教材；
-
-                                        <div class="small">已完成： 22%</div>
-                                        <div class="progress progress-mini">
-                                            <div style="width: 22%;" class="progress-bar progress-bar-warning"></div>
-                                        </div>
-                                        <div class="small text-muted m-t-xs">项目截止： 4:00 - 2015.10.01</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">
-                                        <div class="small pull-right m-t-xs">9小时以后</div>
-                                        <h4>可行性报告研究报上级批准 </h4> 编写目的编写本项目进度报告的目的在于更好的控制软件开发的时间,对团队成员的 开发进度作出一个合理的比对
-
-                                        <div class="small">已完成： 48%</div>
-                                        <div class="progress progress-mini">
-                                            <div style="width: 48%;" class="progress-bar"></div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">
-                                        <div class="small pull-right m-t-xs">9小时以后</div>
-                                        <h4>立项阶段</h4> 东风商用车公司 采购综合综合查询分析系统项目进度阶段性报告武汉斯迪克科技有限公司
-
-                                        <div class="small">已完成： 14%</div>
-                                        <div class="progress progress-mini">
-                                            <div style="width: 14%;" class="progress-bar progress-bar-info"></div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">
-                                        <span class="label label-primary pull-right">NEW</span>
-                                        <h4>设计阶段</h4>
-                                        <!--<div class="small pull-right m-t-xs">9小时以后</div>-->
-                                        项目进度报告(Project Progress Report)
-                                        <div class="small">已完成： 22%</div>
-                                        <div class="small text-muted m-t-xs">项目截止： 4:00 - 2015.10.01</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">
-                                        <div class="small pull-right m-t-xs">9小时以后</div>
-                                        <h4>拆迁阶段</h4> 科研项目研究进展报告 项目编号: 项目名称: 项目负责人:
-
-                                        <div class="small">已完成： 22%</div>
-                                        <div class="progress progress-mini">
-                                            <div style="width: 22%;" class="progress-bar progress-bar-warning"></div>
-                                        </div>
-                                        <div class="small text-muted m-t-xs">项目截止： 4:00 - 2015.10.01</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">
-                                        <div class="small pull-right m-t-xs">9小时以后</div>
-                                        <h4>建设阶段 </h4> 编写目的编写本项目进度报告的目的在于更好的控制软件开发的时间,对团队成员的 开发进度作出一个合理的比对
-
-                                        <div class="small">已完成： 48%</div>
-                                        <div class="progress progress-mini">
-                                            <div style="width: 48%;" class="progress-bar"></div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://www.zi-han.net/theme/hplus/index.html#">
-                                        <div class="small pull-right m-t-xs">9小时以后</div>
-                                        <h4>获证开盘</h4> 编写目的编写本项目进度报告的目的在于更好的控制软件开发的时间,对团队成员的 开发进度作出一个合理的比对
-
-                                        <div class="small">已完成： 14%</div>
-                                        <div class="progress progress-mini">
-                                            <div style="width: 14%;" class="progress-bar progress-bar-info"></div>
-                                        </div>
-                                    </a>
-                                </li>
-
-                            </ul>
-
-                        </div>
-                    </div>
-
-                </div><div class="slimScrollBar" style="width: 4px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 894px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 4px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.4; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>
+                </ul>
             </div>
         </div>
-        <!--右侧边栏结束-->
-        <!--mini聊天窗口开始-->
-        <div class="small-chat-box fadeInRight animated">
+    </nav>
+    <nav class="site-menubar site-menubar-dark" id="admui-siteMenubar">
+        <div class="site-menubar-body">
+            <div class="tab-content height-full" id="admui-navTabs">
+                <!-- 一级菜单 -->
+                <div class="tab-pane animation-fade height-full active" id="admui-navTabsItem-1" role="tabpanel">
+                    <div>
+                        <ul class="site-menu">
 
-            <div class="heading" draggable="true">
-                <small class="chat-date pull-right">
-                    2015.9.1
-                </small> 与 Beau-zihan 聊天中
+                            <!-- 二级菜单 -->
+
+                            <li class="site-menu-category">UI 示例</li>
+                            <!-- 三级菜单 -->
+
+
+
+
+                            <li class="site-menu-item has-sub ">
+                                <a href="javascript:;"><i class="site-menu-icon fa fa-laptop" aria-hidden="true"></i><span class="site-menu-title">布局</span><span class="site-menu-arrow"></span></a>
+                                <ul class="site-menu-sub">
+                                    <!-- 四级菜单 -->
+
+
+
+                                    <li class="site-menu-item has-sub ">
+                                        <a href="javascript:;">
+                                            <span class="site-menu-title">栅格</span><span class="site-menu-arrow"></span>
+                                        </a>
+                                        <ul class="site-menu-sub">
+                                            <!-- 五级菜单 -->
+
+                                            <li class="site-menu-item ">
+                                                <a data-pjax href="/components/layouts/grids" target="_blank">
+                                                    <span class="site-menu-title">基本栅格</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="site-menu-item ">
+                                                <a data-pjax href="/components/layouts/layout-grid" target="_blank">
+                                                    <span class="site-menu-title">布局栅格</span>
+                                                </a>
+                                            </li>
+
+                                            <!-- 五级菜单 -->
+                                        </ul>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item has-sub ">
+                                        <a href="javascript:;">
+                                            <span class="site-menu-title">标题栏</span><span class="site-menu-arrow"></span>
+                                        </a>
+                                        <ul class="site-menu-sub">
+                                            <!-- 五级菜单 -->
+
+                                            <li class="site-menu-item ">
+                                                <a data-pjax href="/components/layouts/headers" target="_blank">
+                                                    <span class="site-menu-title">普通</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="site-menu-item ">
+                                                <a data-pjax href="/components/layouts/bordered-header" target="_blank">
+                                                    <span class="site-menu-title">带边框</span>
+                                                </a>
+                                            </li>
+
+                                            <!-- 五级菜单 -->
+                                        </ul>
+                                    </li>
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/layouts/panel-transition" target="_blank">
+                                            <span class="site-menu-title">面板动画</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/layouts/boxed" target="_blank">
+                                            <span class="site-menu-title">盒式布局</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/layouts/page-aside" target="_blank">
+                                            <span class="site-menu-title">侧边栏</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/layouts/two-columns" target="_blank">
+                                            <span class="site-menu-title">两栏式布局</span>
+                                        </a>
+                                    </li>
+
+
+
+                                    <!-- 四级菜单 -->
+                                </ul>
+                            </li>
+
+
+
+
+                            <li class="site-menu-item has-sub ">
+                                <a href="javascript:;"><i class="site-menu-icon fa fa-cube" aria-hidden="true"></i><span class="site-menu-title">基本</span><span class="site-menu-arrow"></span></a>
+                                <ul class="site-menu-sub">
+                                    <!-- 四级菜单 -->
+
+
+
+                                    <li class="site-menu-item has-sub ">
+                                        <a href="javascript:;">
+                                            <span class="site-menu-title">面板</span><span class="site-menu-arrow"></span>
+                                        </a>
+                                        <ul class="site-menu-sub">
+                                            <!-- 五级菜单 -->
+
+                                            <li class="site-menu-item ">
+                                                <a data-pjax href="/components/basic/panel/structure" target="_blank">
+                                                    <span class="site-menu-title">面板结构</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="site-menu-item ">
+                                                <a data-pjax href="/components/basic/panel/actions" target="_blank">
+                                                    <span class="site-menu-title">面板操作</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="site-menu-item ">
+                                                <a data-pjax href="/components/basic/panel/portlets" target="_blank">
+                                                    <span class="site-menu-title">面板组件</span>
+                                                </a>
+                                            </li>
+
+                                            <!-- 五级菜单 -->
+                                        </ul>
+                                    </li>
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/basic/buttons" target="_blank">
+                                            <span class="site-menu-title">按钮</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/basic/icons" target="_blank">
+                                            <span class="site-menu-title">矢量图标</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/basic/dropdowns" target="_blank">
+                                            <span class="site-menu-title">下拉菜单</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/basic/list" target="_blank">
+                                            <span class="site-menu-title">列表组</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/basic/tooltip-popover" target="_blank">
+                                            <span class="site-menu-title">气泡提示 & 弹出框</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/basic/modals" target="_blank">
+                                            <span class="site-menu-title">模态框</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/basic/tabs-accordions" target="_blank">
+                                            <span class="site-menu-title">选项卡 & 折叠面板</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/basic/images" target="_blank">
+                                            <span class="site-menu-title">图片</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/basic/badges-labels" target="_blank">
+                                            <span class="site-menu-title">徽章 & 标签</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/basic/carousel" target="_blank">
+                                            <span class="site-menu-title">轮播组件</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/basic/typography" target="_blank">
+                                            <span class="site-menu-title">排版</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/basic/progress-bars" target="_blank">
+                                            <span class="site-menu-title">进度条</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/basic/colors" target="_blank">
+                                            <span class="site-menu-title">配色方案</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/basic/utilities" target="_blank">
+                                            <span class="site-menu-title">辅助类</span>
+                                        </a>
+                                    </li>
+
+
+
+                                    <!-- 四级菜单 -->
+                                </ul>
+                            </li>
+
+
+
+
+                            <li class="site-menu-item has-sub ">
+                                <a href="javascript:;"><i class="site-menu-icon fa fa-cubes" aria-hidden="true"></i><span class="site-menu-title">进阶</span><span class="site-menu-arrow"></span></a>
+                                <ul class="site-menu-sub">
+                                    <!-- 四级菜单 -->
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/advanced/tour" target="_blank">
+                                            <span class="site-menu-title">新手指引</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/advanced/animation" target="_blank">
+                                            <span class="site-menu-title">动画</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/advanced/highlight" target="_blank">
+                                            <span class="site-menu-title">代码高亮</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/advanced/lightbox" target="_blank">
+                                            <span class="site-menu-title">灯箱</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/advanced/scrollbar" target="_blank">
+                                            <span class="site-menu-title">滚动条</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/advanced/rating" target="_blank">
+                                            <span class="site-menu-title">评分</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/advanced/context-menu" target="_blank">
+                                            <span class="site-menu-title">右键菜单</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/advanced/alertify" target="_blank">
+                                            <span class="site-menu-title">Alertify弹框</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/advanced/masonry" target="_blank">
+                                            <span class="site-menu-title">瀑布流布局</span>
+                                        </a>
+                                    </li>
+
+
+
+
+
+                                    <li class="site-menu-item has-sub ">
+                                        <a href="javascript:;">
+                                            <span class="site-menu-title">树形控件</span><span class="site-menu-arrow"></span>
+                                        </a>
+                                        <ul class="site-menu-sub">
+                                            <!-- 五级菜单 -->
+
+                                            <li class="site-menu-item ">
+                                                <a data-pjax href="/components/advanced/tree/jstree" target="_blank">
+                                                    <span class="site-menu-title">JsTree</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="site-menu-item ">
+                                                <a data-pjax href="/components/advanced/tree/treeview" target="_blank">
+                                                    <span class="site-menu-title">Treeview</span>
+                                                </a>
+                                            </li>
+
+                                            <!-- 五级菜单 -->
+                                        </ul>
+                                    </li>
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/advanced/toastr" target="_blank">
+                                            <span class="site-menu-title">Toaster 通知</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/advanced/sortable-nestable" target="_blank">
+                                            <span class="site-menu-title">拖动排序</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/advanced/bootbox-sweetalert" target="_blank">
+                                            <span class="site-menu-title">弹层组件</span>
+                                        </a>
+                                    </li>
+
+
+
+                                    <!-- 四级菜单 -->
+                                </ul>
+                            </li>
+
+
+
+
+                            <li class="site-menu-item has-sub ">
+                                <a href="javascript:;"><i class="site-menu-icon fa fa-plug" aria-hidden="true"></i><span class="site-menu-title">组件</span><span class="site-menu-arrow"></span></a>
+                                <ul class="site-menu-sub">
+                                    <!-- 四级菜单 -->
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/structure/alerts" target="_blank">
+                                            <span class="site-menu-title">警告框</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/structure/ribbon" target="_blank">
+                                            <span class="site-menu-title">彩带</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/structure/pricing-tables" target="_blank">
+                                            <span class="site-menu-title">价目表</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/structure/overlay" target="_blank">
+                                            <span class="site-menu-title">遮罩</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/structure/cover" target="_blank">
+                                            <span class="site-menu-title">覆盖层</span>
+                                        </a>
+                                    </li>
+
+
+
+
+
+                                    <li class="site-menu-item has-sub ">
+                                        <a href="javascript:;">
+                                            <span class="site-menu-title">时间轴</span><span class="site-menu-arrow"></span>
+                                        </a>
+                                        <ul class="site-menu-sub">
+                                            <!-- 五级菜单 -->
+
+                                            <li class="site-menu-item ">
+                                                <a data-pjax href="/components/structure/timeline/simple" target="_blank">
+                                                    <span class="site-menu-title">简单时间轴</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="site-menu-item ">
+                                                <a data-pjax href="/components/structure/timeline/icons" target="_blank">
+                                                    <span class="site-menu-title">图标时间轴</span>
+                                                </a>
+                                            </li>
+
+                                            <!-- 五级菜单 -->
+                                        </ul>
+                                    </li>
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/structure/step" target="_blank">
+                                            <span class="site-menu-title">步骤条</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/structure/comments" target="_blank">
+                                            <span class="site-menu-title">评论</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/structure/media" target="_blank">
+                                            <span class="site-menu-title">媒体</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/structure/chat" target="_blank">
+                                            <span class="site-menu-title">聊天窗口</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/structure/testimonials" target="_blank">
+                                            <span class="site-menu-title">客户评价</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/structure/nav" target="_blank">
+                                            <span class="site-menu-title">导航</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/structure/navbars" target="_blank">
+                                            <span class="site-menu-title">导航条</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/structure/blockquotes" target="_blank">
+                                            <span class="site-menu-title">引用</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/structure/pagination" target="_blank">
+                                            <span class="site-menu-title">分页</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/structure/breadcrumbs" target="_blank">
+                                            <span class="site-menu-title">包屑导航</span>
+                                        </a>
+                                    </li>
+
+
+
+                                    <!-- 四级菜单 -->
+                                </ul>
+                            </li>
+
+
+
+
+                            <li class="site-menu-item has-sub ">
+                                <a href="javascript:;"><i class="site-menu-icon fa fa-puzzle-piece" aria-hidden="true"></i><span class="site-menu-title">小工具</span><span class="site-menu-arrow"></span></a>
+                                <ul class="site-menu-sub">
+                                    <!-- 四级菜单 -->
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/widgets/statistics" target="_blank">
+                                            <span class="site-menu-title">统计</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/widgets/data" target="_blank">
+                                            <span class="site-menu-title">数据</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/widgets/blog" target="_blank">
+                                            <span class="site-menu-title">博客</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/widgets/chart" target="_blank">
+                                            <span class="site-menu-title">图表</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/widgets/social" target="_blank">
+                                            <span class="site-menu-title">社交</span>
+                                        </a>
+                                    </li>
+
+
+
+
+                                    <li class="site-menu-item ">
+                                        <a data-pjax href="/components/widgets/weather" target="_blank">
+                                            <span class="site-menu-title">天气</span>
+                                        </a>
+                                    </li>
+
+
+
+                                    <!-- 四级菜单 -->
+                                </ul>
+                            </li>
+
+
+
+                            <!-- 三级菜单 -->
+                            <!-- 二级菜单 -->
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- 一级菜单 -->
             </div>
+        </div>
+    </nav>
+    <nav class="site-contabs" id="admui-siteConTabs">
+        <button type="button" class="btn btn-icon btn-default pull-left hide">
+            <i class="icon fa-angle-double-left"></i>
+        </button>
+        <div class="contabs-scroll pull-left">
+            <ul class="nav con-tabs">
+                <li class="active">
+                    <a href="/home" target="tab-0" rel="contents"><span>首页</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-icon btn-default hide">
+                <i class="icon fa-angle-double-right"></i>
+            </button>
+            <button type="button" class="btn btn-default dropdown-toggle btn-outline" data-toggle="dropdown" aria-expanded="false">
+                <span class="caret"></span> <span class="sr-only">切换菜单</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="conTabsDropdown" role="menu">
+                <li class="reload-page" role="presentation">
+                    <a href="javascript:;" role="menuitem"><i class="icon wb-reload"></i> 刷新当前</a>
+                </li>
+                <li class="close-other" role="presentation">
+                    <a href="javascript:;" role="menuitem"><i class="icon wb-close"></i> 关闭其他</a>
+                </li>
+                <li class="close-all" role="presentation">
+                    <a href="javascript:;" role="menuitem"><i class="icon wb-power"></i> 关闭所有</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-            <div class="slimScrollDiv" style="position: relative; width: auto; height: 234px;">
-                <div class="content" style="width: auto; height: 234px;">
+    <main class="site-page">
+        <div class="page-container" id="admui-pageContent">
+            <title>首页</title>
 
-                    <div class="left">
-                        <div class="author-name">
-                            Beau-zihan <small class="chat-date">
-                                10:02
-                            </small>
-                        </div>
-                        <div class="chat-message active">
-                            你好
-                        </div>
+            <link rel="stylesheet" href="http://cdn.admui.com/demo/pjax/1.3.0/fonts/themify/themify.css">
+            <link rel="stylesheet" href="http://cdn.admui.com/demo/pjax/1.3.0/css/home.css">
 
-                    </div>
-                    <div class="right">
-                        <div class="author-name">
-                            游客
-                            <small class="chat-date">
-                                11:24
-                            </small>
+            <div class="page animation-fade page-index">
+                <div class="page-content">
+                    <div class="media account-info">
+                        <div class="media-left">
+                            <div class="avatar avatar-online">
+                                <img src="http://cdn.admui.com/demo/pjax/1.3.0/images/avatar.svg" alt="18071755626">
+                                <i class="avatar avatar-busy"></i>
+                            </div>
                         </div>
-                        <div class="chat-message">
-                            你好，请问H+有帮助文档吗？
-                        </div>
-                    </div>
-                    <div class="left">
-                        <div class="author-name">
-                            Beau-zihan
-                            <small class="chat-date">
-                                08:45
-                            </small>
-                        </div>
-                        <div class="chat-message active">
-                            有，购买的H+源码包中有帮助文档，位于docs文件夹下
-                        </div>
-                    </div>
-                    <div class="right">
-                        <div class="author-name">
-                            游客
-                            <small class="chat-date">
-                                11:24
-                            </small>
-                        </div>
-                        <div class="chat-message">
-                            那除了帮助文档还提供什么样的服务？
-                        </div>
-                    </div>
-                    <div class="left">
-                        <div class="author-name">
-                            Beau-zihan
-                            <small class="chat-date">
-                                08:45
-                            </small>
-                        </div>
-                        <div class="chat-message active">
-                            1.所有源码(未压缩、带注释版本)；
-                            <br> 2.说明文档；
-                            <br> 3.终身免费升级服务；
-                            <br> 4.必要的技术支持；
-                            <br> 5.付费二次开发服务；
-                            <br> 6.授权许可；
-                            <br> ……
-                            <br>
-                        </div>
-                    </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                欢迎您，18071755626
+                                <small>
 
+                                    系统管理员
 
-                </div><div class="slimScrollBar" style="width: 4px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 4px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.4; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>
-            </div>
-            <div class="form-chat">
-                <div class="input-group input-group-sm">
-                    <input type="text" class="form-control"> <span class="input-group-btn">
-                        <button class="btn btn-primary" type="button">
-                            发送
-                        </button>
-                    </span>
+                                </small>
+                            </h4>
+                            <p>
+                                <i class="icon icon-color wb-bell" aria-hidden="true"></i> 这是您第 29 次登录，上次登录日期：2018-4-20 14:24:08，详细信息请查看
+                                <a data-pjax href="/account/log" target="_blank">日志</a>
+                                ，如果不是您本人登录，请及时
+                                <a data-pjax href="/account/password" target="_blank">修改密码</a>
+                                。
+                            </p>
+                        </div>
+                        <div class="media-right">
+                            <a href="/system/account" data-pjax target="_blank" class="btn btn-outline btn-success btn-outline btn-sm">账户管理</a>
+                        </div>
+                    </div>
+                    <div class="row margin-top-10" data-plugin="matchHeight" data-by-row="true">
+                        <div class="col-md-7">
+                            <div class="panel introduce-info">
+                                <div class="panel-heading">
+                                    <ul class="panel-actions">
+                                        <li>
+                                            <a href="http://docs.admui.com/" target="_blank">更多</a>
+                                        </li>
+                                    </ul>
+                                    <h1 class="panel-title">基本介绍</h1>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <a href="javascript:;">
+                                                <img class="media-object" src="http://cdn.admui.com/demo/pjax/1.3.0/images/admui-desktop.svg" alt="...">
+                                            </a>
+
+                                        </div>
+                                        <div class="media-body">
+                                            <h3 class="media-heading">Admui 通用管理系统快速开发框架</h3>
+                                            <ul class="list-group list-group-full">
+                                                <li class="list-group-item">
+                                                    Admui 是一个基于最新 Web
+                                                    技术的企业级通用管理系统快速开发框架，可以帮助企业极大的提高工作效率，节省开发成本，提升品牌形象。
+                                                </li>
+                                                <li class="list-group-item">您可以 Admui 为基础，快速开发各种MIS系统，如CMS、OA、CRM、ERP、POS等。</li>
+                                                <li class="list-group-item">Admui 紧贴业务特性，涵盖了大量的常用组件和基础功能，最大程度上帮助企业节省时间成本和费用开支。</li>
+                                            </ul>
+
+                                            <div>
+                                                <a href="http://www.admui.com/" class="btn btn-success btn-sm btn-outline btn-round" target="_blank">
+                                                    返回官网
+                                                </a>
+                                                <a href="#" class="btn btn-warning btn-sm btn-outline btn-round" data-toggle="modal" data-target="#admui-mobileView">
+                                                    手机体验
+                                                </a>
+                                                <a href="#" class="btn btn-primary btn-sm btn-outline btn-round open-kf" data-toggle="modal">
+                                                    咨询客服
+                                                </a>
+                                                <a href="http://docs.admui.com/pjax" class="btn btn-danger btn-sm btn-outline btn-round" target="_blank">
+                                                    开发文档
+                                                </a>
+                                                <a href="http://www.admui.com/about.html" class="btn btn-dark btn-sm btn-outline btn-round" target="_blank">
+                                                    服务协议
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="panel changelog-info">
+                                <div class="panel-heading">
+                                    <ul class="panel-actions">
+                                        <li>
+                                            <a href="http://docs.admui.com/pjax/logs/" target="_blank">更多</a>
+                                        </li>
+                                    </ul>
+                                    <h1 class="panel-title">版本信息</h1>
+                                </div>
+                                <div class="panel-body">
+                                    <ul class="time-line">
+                                        <li>
+                                            <time datatime="2018-03-10">2018-03-10</time>
+                                            <h5>
+                                                <a href="http://docs.admui.com/pjax/logs/v1.3.0/" target="_blank">Admui v1.3.0 版发布</a>
+                                            </h5>
+                                        </li>
+                                        <li>
+                                            <time datatime="2017-09-12">2017-09-12</time>
+                                            <h5>
+                                                <a href="http://docs.admui.com/pjax/logs/v1.2.0/" target="_blank">Admui v1.2.0 版发布</a>
+                                            </h5>
+                                        </li>
+                                        <li>
+                                            <time datatime="2017-06-26">2017-06-26</time>
+                                            <h5>
+                                                <a href="http://docs.admui.com/pjax/logs/v1.1.0/" target="_blank">Admui v1.1.0 版发布</a>
+                                            </h5>
+                                        </li>
+                                        <li>
+                                            <time datatime="2017-06-13">2017-06-13</time>
+                                            <h5>
+                                                <a href="http://docs.admui.com/pjax/logs/v1.0.1/" target="_blank">Admui v1.0.1 维护版发布</a>
+                                            </h5>
+                                        </li>
+                                        <li>
+                                            <time datatime="2017-04-25">2017-04-25</time>
+                                            <h5>
+                                                <a href="http://docs.admui.com/pjax/logs/v1.0.0/" target="_blank">Admui v1.0.0 正式发布</a>
+                                            </h5>
+                                        </li>
+                                        <li>
+                                            <time datatime="2017-03-16">2017-03-16</time>
+                                            <h5>
+                                                Admui v1.0.0 RC 正式发布
+                                            </h5>
+                                        </li>
+                                        <li>
+                                            <time datatime="2017-02-21">2017-02-21</time>
+                                            <h5>Admui v1.0.0 Beta1 发布</h5>
+                                        </li>
+                                        <li>
+                                            <time datatime="2016-08-27">2016-08-27</time>
+                                            <h5>Admui v0.1.1 - v0.9.5 开发</h5>
+                                        </li>
+                                        <li>
+                                            <time datatime="2016-07-21">2016-07-21</time>
+                                            <h5>Admui v0.1.0 Beta 开发完成</h5>
+                                        </li>
+                                        <li>
+                                            <time datatime="2016-05-07">2016-05-07</time>
+                                            <h5>Admui v0.0.1 Alpha 开发完成</h5>
+                                        </li>
+                                        <li>
+                                            <time datatime="2015-12-14">2015-12-14</time>
+                                            <h5>Admui 正式立项</h5>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <ul class="panel-actions">
+                                        <li>
+                                            <a href="http://www.admui.com/buy" target="_blank">现在购买</a>
+                                        </li>
+                                    </ul>
+                                    <h3 class="panel-title">购买流程</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="steps row steps-xs">
+                                        <div class="step col-md-3">
+                                            <span class="step-number">1</span>
+                                            <div class="step-desc">
+                                                <span class="step-title">购买</span>
+                                                <p>选择您需要购买的组件及服务</p>
+                                            </div>
+                                        </div>
+                                        <div class="step col-md-3">
+                                            <span class="step-number">2</span>
+                                            <div class="step-desc">
+                                                <span class="step-title">付款</span>
+                                                <p>在线或通过线下汇款支付费用</p>
+                                            </div>
+                                        </div>
+                                        <div class="step col-md-3 done">
+                                            <span class="step-number">3</span>
+                                            <div class="step-desc">
+                                                <span class="step-title">完成</span>
+                                                <p>索取发票，开具合同、下载源码</p>
+                                            </div>
+                                        </div>
+                                        <div class="step col-md-3">
+                                            <span class="step-number">4</span>
+                                            <div class="step-desc">
+                                                <span class="step-title">售后</span>
+                                                <p>工单支持、在线反馈、售后客服</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row part-info" data-plugin="matchHeight" data-by-row="true">
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
+                            <div class="panel">
+                                <div class="panel-body text-center">
+                                    <i class="icon ti-layout-cta-btn-right red-500"></i>
+                                    <p>UI 示例</p>
+                                    <div class="label-content">
+                                        <span class="label label-default label-round label-outline">布局</span>
+                                        <span class="label label-default label-round label-outline">基本</span>
+                                        <span class="label label-default label-round label-outline">进阶</span>
+                                        <span class="label label-default label-round label-outline">组件</span>
+                                        <span class="label label-default label-round label-outline">小工具</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
+                            <div class="panel">
+                                <div class="panel-body text-center">
+                                    <i class="icon ti-layout cyan-500"></i>
+                                    <p>页面示例</p>
+                                    <div class="label-content">
+                                        <span class="label label-default label-round label-outline">首页</span>
+                                        <span class="label label-default label-round label-outline">常用</span>
+                                        <span class="label label-default label-round label-outline">团队</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
+                            <div class="panel">
+                                <div class="panel-body text-center">
+                                    <i class="icon ti-widgetized purple-500"></i>
+                                    <p>表格示例</p>
+                                    <div class="label-content">
+                                        <span class="label label-default label-round label-outline">基本表格</span>
+                                        <span class="label label-default label-round label-outline">树形表格</span>
+                                        <span class="label label-default label-round label-outline">DataTable</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
+                            <div class="panel">
+                                <div class="panel-body text-center">
+                                    <i class="icon ti-layout-accordion-list green-500"></i>
+                                    <p>表单示例</p>
+                                    <div class="label-content">
+                                        <span class="label label-default label-round label-outline">基本</span>
+                                        <span class="label label-default label-round label-outline">质感</span>
+                                        <span class="label label-default label-round label-outline">高级</span>
+                                        <span class="label label-default label-round label-outline">布局</span>
+                                        <span class="label label-default label-round label-outline">向导</span>
+                                        <span class="label label-default label-round label-outline">验证</span>
+                                        <span class="label label-default label-round label-outline">预设</span>
+                                        <span class="label label-default label-round label-outline">编辑</span>
+                                        <span class="label label-default label-round label-outline">编辑器</span>
+                                        <span class="label label-default label-round label-outline">图片裁剪</span>
+                                        <span class="label label-default label-round label-outline">文件上传</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
+                            <div class="panel">
+                                <div class="panel-body text-center">
+                                    <i class="icon ti-bar-chart-alt orange-500"></i>
+                                    <p>图表示例</p>
+                                    <div class="label-content">
+                                        <span class="label label-default label-round label-outline">简单图表</span>
+                                        <span class="label label-default label-round label-outline">ECharts</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
+                            <div class="panel">
+                                <div class="panel-body text-center">
+                                    <i class="icon ti-panel teal-500"></i>
+                                    <p>系统设置</p>
+                                    <div class="label-content">
+                                        <span class="label label-default label-round label-outline">菜单</span>
+                                        <span class="label label-default label-round label-outline">用户</span>
+                                        <span class="label label-default label-round label-outline">日志</span>
+                                        <span class="label label-default label-round label-outline">黑名单</span>
+                                        <span class="label label-default label-round label-outline">系统</span>
+                                        <span class="label label-default label-round label-outline">账户</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-        </div>
-        <div id="small-chat">
-            <span class="badge badge-warning pull-right">5</span>
-            <a class="open-small-chat">
-                <i class="fa fa-comments"></i>
+            <script src="http://cdn.admui.com/demo/pjax/1.3.0/vendor/matchheight/jquery.matchHeight.min.js"></script>
 
+
+
+
+        </div>
+        <div class="page-loading vertical-align text-center">
+            <div class="page-loader loader-default loader vertical-align-middle" data-type="default"></div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-legal">
+            上海畅控 &copy;
+            <a href="http://www.admui.com" target="_blank">admui.com</a>
+        </div>
+        <div class="site-footer-right">
+            当前版本：v1.3.0
+            <a class="margin-left-5" data-toggle="tooltip" title="升级" href="http://www.admui.com/buy" target="_blank">
+                <i class="icon fa-cloud-upload"></i>
             </a>
         </div>
-    </div>
+    </footer>
 
-    <script src="~/Scripts/jquery.min.js"></script>
-    <script src="~/Scripts/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-    <script src="~/Scripts/jquery.metisMenu.js"></script>
-    <script src="~/Scripts/jquery.slimscroll.min.js"></script>
-    <script src="~/Scripts/layer/layer.min.js"></script>
-    <script src="~/Scripts/hplus.js"></script>
-    <script src="~/Scripts/contabs.js"></script>
-    <script src="~/Scripts/pace.min.js"></script>
+    <div class="modal fade" id="admui-mobileView" aria-hidden="true" aria-labelledby="admui-mobileView" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-sidebar modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title">在手机上预览本页</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="thumbnail">
+                        <img class="img-responsive img-bordered" id="admui-mobileViewQRcode" src="">
+                    </p>
+                    <p class="margin-top-20 font-size-12">
+                        <i class="icon wb-bell" aria-hidden="true"></i> 您可以用手机APP(如微信、支付宝等)的扫码功能扫码下面的二维码，在手机上查看本页显示效果。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/js/screenfull/screenfull.min.js"></script>
 </body>
 </html>

@@ -177,6 +177,8 @@
     <Content Include="Content\css\animate.min.css" />
     <Content Include="Content\css\common.css" />
     <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\site.css" />
+    <Content Include="Content\css\site.min.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\style.min.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
@@ -203,6 +205,8 @@
     <Content Include="Content\images\login\thumbs\bg-img-7.jpg" />
     <Content Include="Content\images\login\thumbs\bg-trns.jpg" />
     <Content Include="Content\images\profile_small.jpg" />
+    <Content Include="Content\js\artTemplate\template.min.js" />
+    <Content Include="Content\js\bootbox\bootbox.min.js" />
     <Content Include="Content\js\bootstrap-3.3.7\css\bootstrap-theme.css" />
     <Content Include="Content\js\bootstrap-3.3.7\css\bootstrap-theme.min.css" />
     <Content Include="Content\js\bootstrap-3.3.7\css\bootstrap.css" />
@@ -374,10 +378,10 @@
     <Content Include="Content\js\bootstrap-table\locale\bootstrap-table-zh-CN.min.js" />
     <Content Include="Content\js\bootstrap-table\locale\bootstrap-table-zh-TW.js" />
     <Content Include="Content\js\bootstrap-table\locale\bootstrap-table-zh-TW.min.js" />
+    <Content Include="Content\js\breakpoints\breakpoints.min.js" />
     <Content Include="Content\js\common.js" />
     <Content Include="Content\js\contabs.js" />
     <Content Include="Content\js\content.js" />
-    <Content Include="Content\js\hplus.js" />
     <Content Include="Content\js\jquery-2.1.4.min.js" />
     <Content Include="Content\js\jquery.min.js" />
     <Content Include="Content\js\jquery.slimscroll.min.js" />
@@ -404,11 +408,34 @@
     <Content Include="Content\js\plugins\pace\pace.js" />
     <Content Include="Content\js\plugins\pace\pace.min.css" />
     <Content Include="Content\js\plugins\pace\pace.min.js" />
+    <Content Include="Content\js\screenfull\screenfull.js" />
+    <Content Include="Content\js\screenfull\screenfull.min.js" />
+    <Content Include="Content\js\slimscroll\examples\allow-page-scroll.html" />
+    <Content Include="Content\js\slimscroll\examples\chaining.html" />
+    <Content Include="Content\js\slimscroll\examples\disable-fade-out.html" />
+    <Content Include="Content\js\slimscroll\examples\dynamic-content.html" />
+    <Content Include="Content\js\slimscroll\examples\height-width.html" />
+    <Content Include="Content\js\slimscroll\examples\index.html" />
+    <Content Include="Content\js\slimscroll\examples\libs\prettify\prettify.css" />
+    <Content Include="Content\js\slimscroll\examples\libs\prettify\prettify.js" />
+    <Content Include="Content\js\slimscroll\examples\mouse-wheel.html" />
+    <Content Include="Content\js\slimscroll\examples\multiple-elements.html" />
+    <Content Include="Content\js\slimscroll\examples\navigation.html" />
+    <Content Include="Content\js\slimscroll\examples\nested.html" />
+    <Content Include="Content\js\slimscroll\examples\programmatic-scrolling.html" />
+    <Content Include="Content\js\slimscroll\examples\rail.html" />
+    <Content Include="Content\js\slimscroll\examples\scroll-events.html" />
+    <Content Include="Content\js\slimscroll\examples\scrollbar.html" />
+    <Content Include="Content\js\slimscroll\examples\start-position.html" />
+    <Content Include="Content\js\slimscroll\examples\style.css" />
+    <Content Include="Content\js\slimscroll\jquery.slimscroll.js" />
+    <Content Include="Content\js\slimscroll\jquery.slimscroll.min.js" />
     <Content Include="Content\js\textValidator.js" />
+    <Content Include="Content\js\toastr\toastr.css" />
+    <Content Include="Content\js\toastr\toastr.min.js" />
     <Content Include="Content\js\welcome.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\css\Site.css" />
     <Content Include="Configs\database.config" />
     <Content Include="Configs\system.config" />
     <Content Include="Web.config">
@@ -455,7 +482,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Index1.cshtml" />
     <Content Include="Views\Home\index_v1.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_BootstrapLayout.cshtml" />
@@ -464,6 +491,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\02.DataService\Nifty.Model\Nifty.Model.csproj">
